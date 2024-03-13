@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Luckiest Guy';
+            background-color: #E6E6EA;
+        }
+
+        .container {
+            padding: 20px;
+            overflow: hidden;
+            background-color: #FE4A49;
+
+        }
+
+        .container h1 {
+            float: left;
+            margin-left: 10%;
+            color: white;
+        }
+
+        .container ul {
+            list-style-type: none;
+            font-size: 20px;
+            margin-left: 60%;
+        }
+
+        .container li {
+            margin-top: 10px;
+            float: left;
+            padding: 0 20px 0 20px;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .current a::after {
+            content: '-';
+            font-size: 4px;
+            background-color: white;
+            display: block;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 55% 45%;
+        }
+
+        .equation {
+            font-size: 67px;
+            background-color: white;
+            border-radius: 3px;
+            text-align: center;
+            padding-top: 15%;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .equation h1 {
+            display: inline;
+            padding: 20px;
+        }
+
+        .answer-options {
+            border-style: solid;
+            border-color: blue;
+            margin-top: 10px;
+        }
+
+        .answer {
+            display: grid;
+            grid-template-rows: 5% 95%;
+
+        }
+
+        .BINGO {
+            margin-top: 10px;
+            height: 90px;
+            width: 100%;
+            background-color: blue;
+            text-align: center;
+            color: white;
+            font-size: 90px;
+        }
+
+        .op {
+            font-size: 25px;
+            display: grid;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            margin-top: 85px;
+        }
+
+        .op h1 {
+            cursor: pointer;
+            color: whitesmoke;
+            border-radius: 3px;
+            margin-top: 1px;
+            text-align: center;
+            width: 95%;
+            height: 60px;
+        }
+
+        #option1,
+        #option4,
+        #option7,
+        #option10,
+        #option13,
+        #option16,
+        #option19,
+        #option22,
+        #option25 {
+            background-color: #FE4A49;
+            ;
+            color: white;
+            transition: 1s;
+        }
+
+        #option1:hover {
+            color: #FE4A49;
+            background: white;
+        }
+
+        #option2,
+        #option5,
+        #option8,
+        #option11,
+        #option14,
+        #option17,
+        #option20,
+        #option23 {
+            background-color: #2AB7CA;
+            color: white;
+            transition: 1s;
+        }
+
+        #option2:hover {
+            color: #2AB7CA;
+            background: white;
+        }
+
+        #option3,
+        #option6,
+        #option9,
+        #option12,
+        #option15,
+        #option18,
+        #option21,
+        #option24 {
+            background-color: #FED766;
+            color: white;
+            transition: 1s;
+        }
+
+        #option3:hover {
+            color: #FED766;
+            background: white;
+        }
+    </style>
+  <title>Add</title>
+</head>
+<body>
+  <header>
+   <div class="container">
+    <h1>MATH BINGO</h1>
+    <ul>
+     <li class="current"><a href="Bingo.html">ADD</a></li>
+     <li><a href="subtract.html">SUBTRACT</a></li>
+     <li><a href="multiply.html">MULTIPLY</a></li>
+     <li><a href="divide.html">DIVIDE</a></li>
+    </ul>
+   </div>
+  </header>
+  <div class="wrapper">
+   <div class="equation">
+    <h1 id="value1" style="color:#FE4A49"></h1>
+    <h1 style="color: #2AB7CA;">+</h1>
+    <h1 id="value2" style="color: #FED766">1</h1>
+    <h1 style="color: #F86624">=</h1>
+    <h1 style="color: gray">?</h1>
+    <button onclick="skip()">Skip</button>
+   </div>
+   <div class="answer-options">
+    <div class="answer">
+     <div class="BINGO">
+       BINGO
+     </div>
+     <div class="op">
+      <h1 id="option1" onclick="verifyAnswer(this.id)">1</h1>
+      <h1 id="option2" onclick="verifyAnswer(this.id)">2</h1>
+      <h1 id="option3" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option4" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option5" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option6" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option7" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option8" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option9" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option10" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option11" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option12" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option13" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option14" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option15" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option16" onclick="verifyAnswer(this.id)">1</h1>
+      <h1 id="option17" onclick="verifyAnswer(this.id)">2</h1>
+      <h1 id="option18" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option19" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option20" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option21" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option22" onclick="verifyAnswer(this.id)">4</h1>
+      <h1 id="option23" onclick="verifyAnswer(this.id)">5</h1>
+      <h1 id="option24" onclick="verifyAnswer(this.id)">3</h1>
+      <h1 id="option25" onclick="verifyAnswer(this.id)">4</h1>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+
+        var random = [];
+        var val1, val2;
+
+        $(document).ready(function () {
+            populateRandomIntegers();
+            populateRandomQuestion();
+        });
+
+        function populateRandomIntegers() {
+
+            console.log("populating random integers");
+            for (var i = 0; i < 25; i++) {
+
+                random[i] = (Math.floor(Math.random() * 50));
+                var option = "option" + (i + 1);
+                console.log("inserting value " + random[i] + " in option " + option);
+                document.getElementById(option).innerHTML = random[i];
+        
+            }
+            
+        }
+       
+        function skip(){
+        
+
+            val1 = Math.floor(Math.random() * 25);
+            val2 = Math.floor(Math.random() * 25);
+            var flag = 0;
+
+            for (var i = 0; i < 25; i++) {
+                if (val1 + val2 == random[i]) {
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0) {
+                console.log("answer does not match any integers, trying again...");
+                populateRandomQuestion();
+            }
+
+            if (flag == 1) {
+                flag = 0;
+                document.getElementById("value1").innerHTML = val1;
+                document.getElementById("value2").innerHTML = val2;
+            }
+           
+
+        }
+       
+
+        function populateRandomQuestion() {
+
+            val1 = Math.floor(Math.random() * 25);
+            val2 = Math.floor(Math.random() * 25);
+            var flag = 0;
+
+            for (var i = 0; i < 25; i++) {
+                if (val1 + val2 == random[i]) {
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0) {
+                console.log("answer does not match any integers, trying again...");
+                populateRandomQuestion();
+            }
+
+            if (flag == 1) {
+                flag = 0;
+                document.getElementById("value1").innerHTML = val1;
+                document.getElementById("value2").innerHTML = val2;
+            }
+                 }
+
+        function verifyAnswer(id) {
+
+            console.log(id);
+            console.log("comparing, " + (val1+val2) + " : " + document.getElementById(id).innerHTML);
+            if ((val1 + val2) == document.getElementById(id).innerHTML) {
+                document.getElementById(id).innerHTML= "&#128512;";
+                 document.getElementById(id).disabled = true;
+                   populateRandomQuestion();
+            }
+        }
+
+    </script>
+</body>
+</html>
+
